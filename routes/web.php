@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Backend\SubtipoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +23,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('posts', App\Http\Controllers\Backend\PostController::class)->middleware('auth')
+->except('show');
+
+    // Route::resource('/posts', PostController::class)
+    // ->middleware('auth')
+    // ->except('show');
