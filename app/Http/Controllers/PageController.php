@@ -22,9 +22,9 @@ class PageController extends Controller
             'posts' => Post::with('user')->latest()->paginate()
         ]);
     }
-
     
-    public function  post( $post)
+    
+    public function  post(Post $post)
     {
         return view('post', [
             'post' => $post
