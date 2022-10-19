@@ -15,7 +15,7 @@ use App\Http\Controllers\Backend\SubtipoController;
 */
 
 Route::get('/', [App\Http\Controllers\PageController::class, 'posts']);
-Route::get('blog/{post}', [App\Http\Controllers\PageController::class, 'post'])->name('post');
+Route::get('blog/{post:slug}', [App\Http\Controllers\PageController::class, 'post'])->name('post');
 
 Auth::routes();
 
